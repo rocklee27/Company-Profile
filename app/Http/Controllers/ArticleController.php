@@ -66,6 +66,6 @@ class ArticleController extends Controller
         }
 
         $article->delete();
-        return redirect('/articles');
+        return redirect()->route('articles.index')->with('success', 'Artikel berhasil dihapus!');
     }
 }
