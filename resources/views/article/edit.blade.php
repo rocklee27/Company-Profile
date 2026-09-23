@@ -26,7 +26,7 @@
 
             <div style="display: flex; gap: 10px; justify-content: flex-end;">
                 <a href="/articles" style="padding: 8px 16px; border: 1px solid #d1d5db; border-radius: 6px; text-decoration: none; color: #374151;">Batal</a>
-                <button type="submit" style="background: #111827; color: white; padding: 8px 16px; border: none; border-radius: 6px; cursor: pointer;">Perbarui</button>
+                <button type="submit" style="background: #111827; color: white; padding: 8px 16px; border: none; border-radius: 6px; cursor: pointer;">Update</button>
             </div>
         </form>
     </div>

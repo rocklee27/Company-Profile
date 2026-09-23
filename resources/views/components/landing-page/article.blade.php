@@ -7,47 +7,24 @@
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-                <!-- Card 1 -->
-                <div class="flex flex-col items-center text-center">
-                    <div class="w-full h-48 rounded-2xl overflow-hidden mb-6">
-                        <img src="{{ asset('images/home.jpg') }}" alt="Router" class="w-full h-full object-cover">
+                @forelse (\App\Models\Article::latest()->take(3)->get() as $dt)
+                    <div class="flex flex-col items-center text-center">
+                        <div class="w-full h-48 rounded-2xl overflow-hidden mb-6 bg-gray-100">
+                            <img src="{{ Storage::url($dt->image) }}" alt="{{ $dt->title }}" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-lg font-bold text-black mb-3 line-clamp-1">{{ $dt->title }}</h3>
+                        <p class="text-xs text-gray-600 leading-relaxed mb-6 flex-grow line-clamp-3">
+                            {{ Str::limit(strip_tags($dt->content), 100) }}
+                        </p>
+                        <a href="/article/{{ $dt->id }}" class="w-full bg-black text-white py-2.5 rounded-xl font-medium text-xs hover:bg-gray-800 transition-colors text-center block">
+    Pelajari Selengkapnya
+</a>
                     </div>
-                    <h3 class="text-lg font-bold text-black mb-3">Router</h3>
-                    <p class="text-xs text-gray-600 leading-relaxed mb-6 flex-grow">
-                        perangkat keras jaringan yang berfungsi untuk menerima sinyal internet dari modem dan membagikannya secara nirkabel
-                    </p>
-                    <a href="#" class="w-full bg-black text-white py-2.5 rounded-xl font-medium text-xs hover:bg-gray-800 transition-colors">
-                        Pelajari Selengkapnya
-                    </a>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="flex flex-col items-center text-center">
-                    <div class="w-full h-48 rounded-2xl overflow-hidden mb-6">
-                        <img src="{{ asset('images/home.jpg') }}" alt="Kabel Lan" class="w-full h-full object-cover">
+                @empty
+                    <div class="col-span-full text-center text-gray-500 py-6">
+                        Belum ada artikel yang tersedia.
                     </div>
-                    <h3 class="text-lg font-bold text-black mb-3">Kabel Lan</h3>
-                    <p class="text-xs text-gray-600 leading-relaxed mb-6 flex-grow">
-                        kabel khusus yang menghubungkan perangkat keras seperti komputer, laptop, atau router dalam area terbatas
-                    </p>
-                    <a href="#" class="w-full bg-black text-white py-2.5 rounded-xl font-medium text-xs hover:bg-gray-800 transition-colors">
-                        Pelajari Selengkapnya
-                    </a>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="flex flex-col items-center text-center">
-                    <div class="w-full h-48 rounded-2xl overflow-hidden mb-6">
-                        <img src="{{ asset('images/home.jpg') }}" alt="Repeater" class="w-full h-full object-cover">
-                    </div>
-                    <h3 class="text-lg font-bold text-black mb-3">Repeater</h3>
-                    <p class="text-xs text-gray-600 leading-relaxed mb-6 flex-grow">
-                        perangkat keras jaringan yang berfungsi untuk menerima sinyal internet dari modem dan membagikannya secara nirkabel
-                    </p>
-                    <a href="#" class="w-full bg-black text-white py-2.5 rounded-xl font-medium text-xs hover:bg-gray-800 transition-colors">
-                        Pelajari Selengkapnya
-                    </a>
-                </div>
+                @endforelse
 
             </div>
 

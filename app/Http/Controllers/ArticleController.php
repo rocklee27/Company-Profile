@@ -14,6 +14,13 @@ class ArticleController extends Controller
         return view('article.index', compact('data'));
     }
 
+    public function landing()
+{
+
+    $data = Article::latest()->take(3)->get();
+    return view('welcome', compact('data'));
+}
+
     public function create()
     {
         return view('article.create');

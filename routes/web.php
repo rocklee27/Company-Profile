@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Article;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\CompanyProfileController;
 use App\Http\Controllers\ProfileController;
@@ -37,5 +38,13 @@ Route::middleware('auth')->group(function () {
 
 });
 
+Route::get('/article', function () {
+    return view('landing-page.articlesendiri');
+});
+
+Route::get('/article/{id}', function ($id) {
+    $article = Article::findOrFail($id);
+    return view('landing-page.show-article', compact('article'));
+});
 
 require __DIR__.'/auth.php';
