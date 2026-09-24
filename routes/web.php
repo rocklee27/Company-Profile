@@ -39,6 +39,10 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/article', function () {
+    return view('landing-page.article');
+});
+
+Route::get('/articles', function () {
     return view('landing-page.articlesendiri');
 });
 
