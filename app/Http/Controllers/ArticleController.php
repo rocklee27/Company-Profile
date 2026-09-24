@@ -16,6 +16,8 @@ class ArticleController extends Controller
 
     public function landing()
     {
+
+
     $data = Article::latest()->get();
     return view('landing-page-2.articlesendiri', compact('data'));
     }

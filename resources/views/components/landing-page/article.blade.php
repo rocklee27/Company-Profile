@@ -1,4 +1,5 @@
 <x-landing-page.layout>
+    <h1 class="bg-green-400">bla bla bala bala bla bla</h1>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
 
         <!-- Grid Card 3 Kolom -->
