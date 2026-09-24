@@ -14,7 +14,7 @@ class CompanyProfileController extends Controller
     public function index()
     {
 
-        return view('landing-page.index');
+        return view('landing-page-2.index');
     }
 
     /**

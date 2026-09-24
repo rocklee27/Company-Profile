@@ -15,11 +15,10 @@ class ArticleController extends Controller
     }
 
     public function landing()
-{
-
-    $data = Article::latest()->take(3)->get();
-    return view('welcome', compact('data'));
-}
+    {
+    $data = Article::latest()->get();
+    return view('landing-page-2.articlesendiri', compact('data'));
+    }
 
     public function create()
     {

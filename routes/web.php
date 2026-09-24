@@ -38,11 +38,9 @@ Route::middleware('auth')->group(function () {
 
 });
 
-Route::get('/article', function () {
-    return view('landing-page.articlesendiri');
-});
+Route::get('/article', [ArticleController::class, 'landing']);
 
-Route::get('/article/{id}', function ($id) {
+Route::get('/articlee/{id}', function ($id) {
     $article = Article::findOrFail($id);
     return view('landing-page.show-article', compact('article'));
 });
