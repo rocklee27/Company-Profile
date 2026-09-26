@@ -46,7 +46,7 @@ class CompanyProfileController extends Controller
      */
     public function edit(CompanyProfile $companyProfile)
     {
-        //
+        return view('company-profile.edit');
     }
 
     /**

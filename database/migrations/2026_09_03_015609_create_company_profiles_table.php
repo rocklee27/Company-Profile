@@ -14,9 +14,10 @@ return new class extends Migration
     {
         Schema::create('company_profiles', function (Blueprint $table) {
             $table->id();
-            $table->string('profiles')->nullable();
-            $table->string('home_image')->nullable();
-            $table->string('articles')->nullable();
+            $table->string('sejarah')->nullable();
+            $table->text('visi')->nullable();
+            $table->text('misi')->nullable();
+            $table->text('nilai_perusaaan')->nullable();
             $table->timestamps();
         });
     }
